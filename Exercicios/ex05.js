@@ -1,39 +1,24 @@
-function imc(){
+function jokenpo(){
     const prompt = require("prompt-sync")()
 
-    let altura = Number(prompt("Digite o valor da sua altura (170 cm): "))
-    if(Number.isNaN(altura)){
-        console.error("Valor inválido. Tente novamente!")
-        return imc()
+    console.log("========= MENU INTERATIVO =========")
+    console.log("Escolha uma das armas: ")
+    console.log("1 - Pedra")
+    console.log("2 - Papel")
+    console.log("3 - Tesoura")
+    let bot = Math.floor(Math.random() * 3) + 1
+    console.log(`O bot escolheu ${bot}`)
+    let arma = Number(prompt("Escolha sua arma (1 ou 2 ou 3): "))
+    
+    if(arma === 1 && bot === 3 || arma === 2 && bot === 1 || arma === 3 && bot === 2){
+        console.log("Você ganhou parabéns!!!!")
     }
-
-    let peso = Number(prompt("Digite o valor do seu peso (80 kg): "))
-    if(Number.isNaN(peso)){
-        console.error("Valor inválido. Tente novamente!")
-        return imc()
+    else if(arma === bot){
+        console.log("Você empatou com o bot!!")
     }
-    altura = altura * 0.01
-    let indice = peso / (altura * altura)
-
-    if(indice < 18.5){
-        console.log("Você está abaixo do peso!")
-    }
-
-    else if(indice >= 18.5 && indice <= 24.9){
-        console.log("Você está saudável!")
-    }
-
-    else if(indice >= 25 && indice <= 29.9){
-        console.log("Você está com sobrepeso (Obesidade Grau 1) !")
-    }
-
-    else if(indice >= 30 && indice <= 39.9){
-        console.log("Você está com obesidade (Obesidade Grau 2) !")
-    }
-
-    else if(indice >= 40){
-        console.log("Você está com obesidade grave (Obesidade Grau 3) !")
+    else{
+        console.log("Você perdeu para o bot! HAHAHAHAHAHAH")
     }
 }
 
-imc()
+jokenpo()

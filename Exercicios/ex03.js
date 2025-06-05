@@ -1,21 +1,14 @@
-function classicarNota(){
-    const prompt = require('prompt-sync')()
-    let nota = Number(prompt("Digite sua nota: "))
+function viagem(){
+    const prompt = require("prompt-sync")()
+    let distancia = Number(prompt("Qual é a distância que você vai percorrer (Em quilometros)? "))
 
-    if(Number.isNaN(nota)){
-        console.error("Valor inválido. Digite novamente!")
-        return classicarNota()
+    if(Number.isNaN(distancia)){
+        console.log("Valor inválido. Tente novamente!")
+        return viagem()
     }
 
-    if(nota >= 7 ){
-        console.log("Aprovado!")
-    }
-    if(nota < 7 && nota >= 3){
-        console.log("Recuperação!")
-    }
-    if(nota < 3){
-        console.log("Reprovado!")
-    }
+    let preco = distancia <= 200 ? distancia * 0.5 : distancia * 0.45
+    console.log(`O valor a se pagar vai ser R$${preco}`)
 }
 
-classicarNota()
+viagem()

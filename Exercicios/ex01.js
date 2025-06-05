@@ -1,20 +1,10 @@
-function imparPar(){
-const prompt = require("prompt-sync")()
-let numero = Number(prompt("Digite um número inteiro: "))
+function reducaoVida(){
+    const prompt = require("prompt-sync")()
+    let numeroCigarros = Number(prompt("Quantos cigarros você fuma por dia? "))
+    let anosFumados = Number(prompt("A quantos anos você fuma? "))
 
-    if(Number.isNaN(numero) || !Number.isInteger(numero)){
-        console.error("Valor inválido. Por favor, digite um número inteiro")
-        return imparPar()
-    }
+    let tempoPerdido = (numeroCigarros * 60 * anosFumados * 364) / 86400
 
-    if(numero % 2 == 0){
-        console.log("O número é par")
-    }
-
-    else {
-         console.log("O número é impar")
-    }
+    console.log(`Você perderá ${tempoPerdido} dias.`)
 }
-
-imparPar()
-
+reducaoVida()
