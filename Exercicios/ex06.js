@@ -22,6 +22,9 @@ function acerteNumero(){
             console.log(`🔺 Numero é maior que ${numero}`)
             console.log(`-1 Tentativa, você tem mais ${maxTentativas-i}`)
         }
+        if(maxTentativas === 20){
+            console.log("Infelizmente você perdeu!")
+        }
         else{
             console.log("🎉  Parabéns, você acertou número!!")
             console.log(`Número de tentativas: ${i}`)
