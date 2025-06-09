@@ -1,3 +1,4 @@
+/*
 let numeros = new Set()
 
 function geraVetorAleatorio(){
@@ -14,6 +15,16 @@ function geraVetorAleatorio(){
     else{
         setTimeout(geraVetorAleatorio,100)
     }
+}
+*/
+
+function geraVetorAleatorio(){
+    let vet= []
+
+    for (let i = 0 ; i < 20; i++){
+        vet[i] = Math.floor(Math.random() * 1000) + 1
+    }
+    ordenarValores(vet)
 }
 
 function ordenarValores(vet){
