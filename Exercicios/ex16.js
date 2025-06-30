@@ -24,6 +24,7 @@ function geraVetorAleatorio(){
     for (let i = 0 ; i < 20; i++){
         vet[i] = Math.floor(Math.random() * 1000) + 1
     }
+    console.log(vet)
     ordenarValores(vet)
 }
 
@@ -39,7 +40,7 @@ function ordenarValores(vet){
         }
     }
     
-    console.table(vet)
+    console.log(vet)
 }
 
 
